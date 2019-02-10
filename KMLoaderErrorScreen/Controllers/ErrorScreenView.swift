@@ -10,8 +10,10 @@ import UIKit
 
 public class ErrorScreenView: UIView {
 
+    @IBOutlet weak var imageViewWidth: NSLayoutConstraint!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var errorTextLabel: UILabel!
+    @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
     // MARK: Set Up View
     let nibName = "ErrorScreenView"
     var contentView: UIVisualEffectView!
@@ -79,6 +81,12 @@ public class ErrorScreenView: UIView {
     //set error Image view. Default is set
     public func setErrorImage(image: UIImage) {
         self.imageView.image = image
+    }
+    
+    //set error Image view height and width. Default is 100, 100
+    public func setErrorImageViewDimensions(width: CGFloat, height:CGFloat) {
+        self.imageViewWidth.constant = width
+        self.imageViewHeight.constant = height
     }
     
     //set error Image view dimensions. Default is 250,250
